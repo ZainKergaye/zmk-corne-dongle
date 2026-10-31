@@ -46,7 +46,7 @@
           name = "firmware";
           src = sourceFiles;
           board = "nice_nano_v2";
-          shield = "eyelash_corne_%PART%";
+          shield = "eyeslash_corne_peripheral_%PART%";
           zephyrDepsHash = "sha256-pGA26rJBYqZFChg72h/CVbm4hrnpzoqXPxK7Bk0uOhQ=";
           enableZmkStudio = false;
         };
