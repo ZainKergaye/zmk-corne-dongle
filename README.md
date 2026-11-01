@@ -18,6 +18,14 @@ right half with their matching files from the same build. Do not flash the
 settings-reset image during a normal update; it clears the controller's stored
 settings and pairings.
 
+## iPad battery reporting
+
+When the dongle is paired directly to an iPad over Bluetooth (select the
+keyboard's BLE output rather than USB output), it exposes each connected half
+through the standard Bluetooth Battery Service. Add Apple's Batteries widget to
+view any battery levels that iPadOS chooses to display. USB mode cannot provide
+this Bluetooth service to the iPad.
+
 To flash a controller, double-tap its reset button to enter its UF2 bootloader,
 then copy the matching `.uf2` file to its mounted drive. Repeat for each of the
 three controllers.
