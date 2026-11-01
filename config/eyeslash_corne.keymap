@@ -66,7 +66,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&mt LSHIFT ESC &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&mt LSHIFT ESC &mt LSHIFT A  &mt LALT S      &mt LCTRL D     &mt LGUI F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt LGUI J  &mt LCTRL K      &mt LALT L    &mt LSHIFT SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                              &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
             >;
@@ -100,8 +100,21 @@
             bindings = <
 &studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
 &trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &tog 4
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
+            >;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        // Toggle with Fn + the former Pause/Break key. This layer keeps the
+        // home-row letters plain for games while leaving every other key alone.
+        gaming_layer {
+            display-name = "GAME";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A   &kp S   &kp D   &kp F   &trans                    &trans  &trans  &trans  &trans  &kp J   &kp K   &kp L   &kp SEMI  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans              &trans              &trans  &trans  &trans  &trans  &trans  &trans
+                             &trans  &trans  &trans                                            &trans  &trans  &trans
             >;
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };

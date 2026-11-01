@@ -26,6 +26,13 @@ through the standard Bluetooth Battery Service. Add Apple's Batteries widget to
 view any battery levels that iPadOS chooses to display. USB mode cannot provide
 this Bluetooth service to the iPad.
 
+## Gaming layer
+
+Home-row mods are Shift on `A`/`;`, Alt on `S`/`L`, Control on `D`/`K`, and
+Meta on `F`/`J`. Hold the Fn thumb key and press the former Pause/Break key to
+toggle the `GAME` layer. It makes those eight positions ordinary letter keys;
+use the same shortcut to turn it off.
+
 To flash a controller, double-tap its reset button to enter its UF2 bootloader,
 then copy the matching `.uf2` file to its mounted drive. Repeat for each of the
 three controllers.
