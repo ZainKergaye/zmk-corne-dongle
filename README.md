@@ -29,9 +29,11 @@ this Bluetooth service to the iPad.
 ## Gaming layer
 
 Home-row mods are Shift on `A`/`;`, Alt on `S`/`L`, Control on `D`/`K`, and
-Meta on `F`/`J`. Hold the Fn thumb key and press the former Pause/Break key to
-toggle the `GAME` layer. It makes those eight positions ordinary letter keys;
-use the same shortcut to turn it off.
+Meta on `F`/`J`. They use a 200 ms tapping term and a 150 ms prior-idle
+requirement. The outer left home key is Control/Escape; the bottom-left outer
+key is Shift/Caps Lock. Hold the Fn thumb key and press the former Pause/Break
+key to toggle the `GAME` layer. It makes those eight positions ordinary letter
+keys; use the same shortcut to turn it off.
 
 ## Encoder
 
