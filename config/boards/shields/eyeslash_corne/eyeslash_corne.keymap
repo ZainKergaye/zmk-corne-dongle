@@ -33,6 +33,14 @@
             ccw-binding = <&kp C_VOL_DN>;
         };
 
+        rsr_scroll: rsr_scroll {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
+        };
+
         rsr_trans: rsr_trans {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -61,10 +69,10 @@
             bindings = <
 &kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &mt LSHIFT ESC &mt LSHIFT A  &mt LALT S      &mt LCTRL D     &mt LGUI F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt LGUI J  &mt LCTRL K      &mt LALT L    &mt LSHIFT SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp LG(F)              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                              &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         lower_layer {
@@ -86,7 +94,7 @@
 &trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                                     &trans     &trans     &kp SPACE                                                            &kp RET    &trans     &trans
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         layer_3 {
@@ -97,7 +105,7 @@
 &trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &tog 4
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         // Toggle with Fn + the former Pause/Break key. This layer keeps the
@@ -110,7 +118,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans              &trans              &trans  &trans  &trans  &trans  &trans  &trans
                              &trans  &trans  &trans                                            &trans  &trans  &trans
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
     };
 };

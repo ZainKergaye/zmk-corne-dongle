@@ -33,6 +33,11 @@ Meta on `F`/`J`. Hold the Fn thumb key and press the former Pause/Break key to
 toggle the `GAME` layer. It makes those eight positions ordinary letter keys;
 use the same shortcut to turn it off.
 
+## Encoder
+
+The encoder scrolls by default; press it for Command-F. While the Number layer
+is held, rotation controls volume and its press mutes audio.
+
 To flash a controller, double-tap its reset button to enter its UF2 bootloader,
 then copy the matching `.uf2` file to its mounted drive. Repeat for each of the
 three controllers.
@@ -60,3 +65,15 @@ nix build .#firmware
 
 The build produces firmware for both halves. Use `nix develop` to enter a
 shell for local ZMK development.
+
+For faster local iteration, build only the controller that will be flashed:
+
+```sh
+nix build .#dongle  # result/zmk.uf2
+nix build .#left    # result/zmk.uf2
+nix build .#right   # result/zmk.uf2
+```
+
+`nix build .#firmware` remains the two-half release build. Nix builds in clean
+directories, so a changed keymap still requires recompiling each selected
+controller; the individual targets avoid compiling the other images.
