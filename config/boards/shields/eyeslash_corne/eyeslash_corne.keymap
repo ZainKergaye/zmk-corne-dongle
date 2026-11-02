@@ -26,15 +26,6 @@
 
 / {
     behaviors {
-        hm: homerow_mod {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-
         rsr_vol: rsr_vol {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -80,8 +71,8 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&hm LCTRL ESC &hm LSHIFT A  &hm LALT S      &hm LCTRL D     &hm LGUI F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hm LGUI J  &hm LCTRL K      &hm LALT L    &hm LSHIFT SEMI  &kp SQT
-&hm LSHIFT CAPS  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp LG(F)              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp LSHIFT     &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL      &kp Z  &kp X      &kp C     &kp V  &kp B       &kp LG(F)              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                              &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
             >;
             sensor-bindings = <&rsr_scroll &rsr_trans>;
